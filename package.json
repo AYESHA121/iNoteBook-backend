@@ -4,8 +4,9 @@
     "description": "iNotebook- Your Notebook on the cloud",
     "main": "index.js",
     "scripts": {
-        "server": "nodemon server.js",
-        "start": "node index.js"
+        "start": "NODE_ENV=development ./node_modules/.bin/netlify-lambda serve src",
+        "build": "NODE_ENV=production ./node_modules/.bin/netlify-lambda build src",
+        "server": "nodemon server.js"
     },
     "author": "",
     "license": "ISC",
@@ -15,6 +16,8 @@
         "express": "^4.18.2",
         "express-validator": "^6.14.2",
         "jsonwebtoken": "^8.5.1",
-        "mongoose": "^6.8.2"
+        "mongoose": "^6.8.2",
+        "netlify-lambda": "^2.0.15",
+        "serverless-http": "^3.1.0"
     }
 }
